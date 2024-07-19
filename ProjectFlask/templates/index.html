@@ -1,58 +1,29 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <h1>this is index</h1>
-    {% if logged %}
-    <h2>Languages: </h2>
-    <ul>
-        {% for title in titles %}
-        <li>{{title}}</li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <h3>Login to access</h3>
-    {% endif %}
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Page</title>
-    <link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css')}}"
+    <title>Line Chart</title>
 </head>
 <body>
+    <div style="width: 600px; height: 400px;">
+        <canvas id="myLine" height="350" width="550"></canvas>
+    </div>
 
-    <h1>Welcome to My First HTML Page</h1>
-    <p>This is a simple HTML page created as an example. You can add more content here as you learn more about HTML.</p>
-
-    <h2>About HTML</h2>
-    <p>HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages.</p>
-
-    <h2>Languages: </h2>
-    <ul>
-        {% for title in titles %}
-        <li>{{title}}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Getting Started</h2>
-    <ul>
-        <li>Learn the basic structure of an HTML document.</li>
-        <li>Understand HTML tags and elements.</li>
-        <li>Experiment with styling using CSS.</li>
-    </ul>
-
-    <footer>
-        <p>&copy; 2024 My First HTML Page</p>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script>
+        const labels = {{ titles | tojson }};
+        const ctx = document.getElementById("myLine");
+        let lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Average Views",
+                    data: [23, 345, 566, 78, 90, 0, 56]
+                }]
+            }
+        });
+    </script>
 </body>
 </html>
