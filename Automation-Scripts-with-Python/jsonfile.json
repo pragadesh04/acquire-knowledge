@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "fname" : "John",
+        "lname" : "Luther",
+        "age" : 25,
+        "hobbies":[
+            "running", "dancing", "painting"
+        ]   
+    },
+    {
+        "id" : 2,
+        "fname" : "John",
+        "lname" : "Cartel",
+        "age" : 34,
+        "hobbies":[
+            "Working", "GoingWork", "Gymming"
+        ]
+    }
+]

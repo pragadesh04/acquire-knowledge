@@ -1,26 +1,34 @@
 import requests, json
 import geocoder
 
-g = geocoder.ip('me')
-print(g.city, g.latlng[0], g.latlng[1])
+try:
+    g = geocoder.ip('me')
+    print(g)
 
-name = input()
-api_key = "XTSOjEYD5EjdSGzFRu1NhzOHmzJjSG6T"
-url = f"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={api_key}&q={name}"
+    g_lat = g.latlng[0]
+    g_lon = g.latlng[1]
 
-print(url)
-response = requests.get(url)
+    print(g.city, g_lat, g_lon)
 
-data = response.json()
-location_key = data[0]["Key"]
-print(location_key)
+except Exception as e:
+    print(f"Error {e}")
+# name = input()
+# api_key = "XTSOjEYD5EjdSGzFRu1NhzOHmzJjSG6T"
+# url = f"http://dataservice.accuweather.com/locations/v1/cities/search?apikey={api_key}&q={name}"
 
-url_Condition = f"http://dataservice.accuweather.com/currentconditions/v1/{location_key}?apikey=XTSOjEYD5EjdSGzFRu1NhzOHmzJjSG6T"
-print(url_Condition)
-response = requests.get(url_Condition)
+# print(url)
+# response = requests.get(url)
 
-data = response.json()
+# data = response.json()
+# location_key = data[0]["Key"]
+# print(location_key)
 
-print(data[0]["WeatherText"])
-print(data[0]["Temperature"]["Metric"]["Value"], end=' ')
-print(data[0]["Temperature"]["Metric"]["Unit"])
+# url_Condition = f"http://dataservice.accuweather.com/currentconditions/v1/{location_key}?apikey=XTSOjEYD5EjdSGzFRu1NhzOHmzJjSG6T"
+# print(url_Condition)
+# response = requests.get(url_Condition)
+
+# data = response.json()
+
+# print(data[0]["WeatherText"])
+# print(data[0]["Temperature"]["Metric"]["Value"], end=' ')
+# print(data[0]["Temperature"]["Metric"]["Unit"])
