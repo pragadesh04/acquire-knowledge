@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button id="submitBtn">Submit</button>
+    <p id="response"></p>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            console.log(username)
+            fetch('/submit_fetch', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response').innerText = data;
+            });
+        });
+    </script>
+</body>
+</html>
