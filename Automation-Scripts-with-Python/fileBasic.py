@@ -2,8 +2,10 @@ import csv, json
 import os
 import pyautogui as pg
 import time as t
+import requests
+import json
 
-decision = int(input("Choose the decision\n1 to read\n2 To write\n3 To sys commands\n"))
+decision = int(input("Choose the decision\n1 to read\n2 To write\n3 To sys commands\n4 PyautoGui Scripts"))
 
 if decision == 1:
     with open ("csvfile.csv", newline="") as csvfile:
@@ -73,4 +75,24 @@ if decision == 4:
         ]
     }
 ]
-""", interval=0.1)
+""",interval=0.05)
+    
+if decision == 5:
+
+    url = 'https://dummyjson.com/products'
+    
+    # Get data from API
+    response = requests.get(url)
+    
+    # load json data
+    data = json.loads(response.text)
+    for item in data["products"]:
+        print(item["title"])
+        print(item["price"] , "$")
+        print(item["description"])
+        print(item["category"])
+        print(item["discountPercentage"])
+        print(item["warrantyInformation"])
+        print(item["shippingInformation"])
+        print(item["availabilityStatus"])
+        print()
