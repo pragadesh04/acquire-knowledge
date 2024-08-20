@@ -1,0 +1,22 @@
+{
+    "background.enabled": true,
+    "background.loop": false,
+    "background.useDefault": false,
+    "background.useFront": false,
+    "background.style": {
+          "content": "''",
+          "pointer-events": "none",
+          "position": "absolute",
+          "z-index": "99999",
+          "width": "70%",
+          "height": "100%",
+          "margin-left":"30%",
+          "background-position": "right",
+          "background-size": "cover",
+          "background-repeat": "no-repeat",
+          "opacity": 0.1
+      },
+    "background.customImages": [
+          "C:/k.png",
+      ]
+}
