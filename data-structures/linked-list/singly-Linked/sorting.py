@@ -20,7 +20,7 @@ class sll:
         temp.next = new_node
 
     def print_(self, msg):
-        print(msg,"\n")
+        print("\n",msg)
         temp = self.head
         while temp:
             print(temp.data, end=" ")
@@ -35,9 +35,7 @@ class sll:
             cur = temp.next
             while cur is not None:
                 if temp.data > cur.data:
-                    val = cur.data
-                    cur.data = temp.data
-                    temp.data = val
+                    temp.data, cur.data = cur.data, temp.data
                 cur = cur.next
             temp = temp.next
 
