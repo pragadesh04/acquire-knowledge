@@ -34,6 +34,9 @@ class double:
             self.add_start(data)
             return
         for _ in range(pos-1):
+            if  temp.next is None:
+                print("Reached end")
+                return
             temp = temp.next
             
         new_node = node(data)

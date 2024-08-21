@@ -20,6 +20,14 @@ class double:
     def print_(self, msg = ""):
         print(f"\n{msg}")
         temp = self.head
+        i = 0
         while temp:
-            print(temp.data, end=" ")
+            print(temp.data, end=f"--")
             temp = temp.next
+            i += 1
+        print("None")
+
+class input_:
+    def inp(self):
+        self.val = int(input("Enter the value: "))
+        return self.val
