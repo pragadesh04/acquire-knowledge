@@ -24,6 +24,9 @@ class scll:
     def print_(self, msg):
         print(f"\n{msg}")
         temp = self.head
+        if temp is None:
+            print(f"SorryError : No element to print")
+            return
         while True:
             print(temp.data, end=" ")
             temp = temp.next

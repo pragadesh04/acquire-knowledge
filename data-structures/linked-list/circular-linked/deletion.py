@@ -19,7 +19,7 @@ class main:
             return
         for _ in range (pos-1):
             temp = temp.next
-
+        temp.next = temp.next.next
 while True:
     val = int(input("Enter the val: "))
     if val == -1:
@@ -31,3 +31,7 @@ m.delete_beg()
 sc.print_("After Deletion Begin")
 m.delete_end()
 sc.print_("After Deletion at end")
+print()
+pos = int(input("Enter the position: "))
+m.delete_pos(pos)
+sc.print_(f"after deletion at {pos}")
