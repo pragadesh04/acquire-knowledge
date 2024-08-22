@@ -1,6 +1,5 @@
 import add_end as add
 dll = add.double()
-
 class sorting():
     def sort(self):
         temp = dll.head
@@ -15,7 +14,6 @@ class sorting():
             return
         else:
             print("Empty node")
-
 s = sorting()
 while True:
     val = int(input())
