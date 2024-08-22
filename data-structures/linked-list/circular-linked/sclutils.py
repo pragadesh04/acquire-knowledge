@@ -21,7 +21,8 @@ class scll:
         self.last.next = new_node
         self.head = new_node
         
-    def print_(self):
+    def print_(self, msg):
+        print(f"\n{msg}")
         temp = self.head
         while True:
             print(temp.data, end=" ")
