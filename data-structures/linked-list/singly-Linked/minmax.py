@@ -24,9 +24,9 @@ class singly:
             print(temp.data, end=" -> ")
             temp = temp.next
         print("Null")
+        
     def minmax(self):
         min, max, temp = self.head.data, self.head.data, self.head
-        
         if self.head is None:
             print("No element")
             return
