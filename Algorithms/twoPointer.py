@@ -9,9 +9,8 @@ target = int(input("enter the target: "))
 
 left = 0
 right = len(arr)-1
-i = 0
 
-while i<len(arr):
+while left < right:
     add = arr[left]+arr[right]
     if add == target:
         print(f"{arr[left]} + {arr[right]} = {target}")
@@ -20,6 +19,5 @@ while i<len(arr):
         right -=1
     elif add < target:
         left +=1
-    i+=1
 else:
     print("No Combinations")
