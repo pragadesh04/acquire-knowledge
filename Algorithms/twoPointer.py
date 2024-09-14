@@ -15,9 +15,11 @@ while i<len(arr):
     add = arr[left]+arr[right]
     if add == target:
         print(f"{arr[left]} + {arr[right]} = {target}")
-        left +=1    
+        break
     elif add > target:
         right -=1
     elif add < target:
         left +=1
     i+=1
+else:
+    print("No Combinations")
