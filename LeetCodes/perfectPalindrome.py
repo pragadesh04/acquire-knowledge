@@ -30,3 +30,13 @@ class Solution:
             l +=1; r -= 1
         return True
         
+# revised my code:
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        temp = ''
+        for i in s:
+            if i.isalpha() or i.isdigit():
+                temp += i.lower()
+        l = 0
+        r = len(temp)-1
+        return temp == temp[::-1]
