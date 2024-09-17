@@ -18,5 +18,6 @@
       },
     "background.customImages": [
           "C:/k.png",
-      ]
+    ],
+    "codesnap.target": "window"
 }
