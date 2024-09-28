@@ -11,5 +11,7 @@ class HelloWorld {
             }
             System.out.print(s);
         }
+
+        sc.close();
     }
 }
