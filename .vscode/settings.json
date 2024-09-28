@@ -19,5 +19,6 @@
     "background.customImages": [
           "C:/k.png",
     ],
-    "codesnap.target": "window"
+    "codesnap.target": "window",
+    "java.debug.settings.onBuildFailureProceed": true
 }
