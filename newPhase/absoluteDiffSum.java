@@ -7,11 +7,11 @@ public class absoluteDiffSum{
         for(i=0; i<v; i++){
             arr[i] = sc.nextInt();
         }
+        sc.close();
         for(i=1; i<v; i++){
             res += Math.abs(arr[i]-arr[i-1]);
         }
         res += Math.abs(arr[0] - arr[i-1]);
         System.out.printf("%d", res);
-        sc.close();
     }
 }
